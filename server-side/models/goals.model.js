@@ -10,6 +10,11 @@ const goalSchema = new mongooose.Schema(
       type: String,
       required: true,
     },
+    User: {
+      type: mongooose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'User',
+    },
   },
   { timestamps: true }
 );
