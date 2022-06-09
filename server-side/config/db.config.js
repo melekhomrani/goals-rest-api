@@ -7,4 +7,5 @@ mongoose
   })
   .catch((err) => {
     console.log('cannot connect to database');
+    process.exit(1);
   });
