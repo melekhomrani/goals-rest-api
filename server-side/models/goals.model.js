@@ -10,7 +10,7 @@ const goalSchema = new mongooose.Schema(
       type: String,
       required: true,
     },
-    User: {
+    user: {
       type: mongooose.Schema.Types.ObjectId,
       required: true,
       ref: 'User',

@@ -7,7 +7,13 @@ const {
   deleteGoal,
 } = require('../controllers/goals.controller');
 
-router.route('/').get(getGoals).post(addGoal);
-router.route('/:id').get(getGoal).put(updateGoal).delete(deleteGoal);
+const { verifAuth } = require('../middlewares/auth.middleware');
+
+router.route('/').get(verifAuth, getGoals).post(verifAuth, addGoal);
+router
+  .route('/:id')
+  .get(verifAuth, getGoal)
+  .put(verifAuth, updateGoal)
+  .delete(verifAuth, deleteGoal);
 
 module.exports = router;
